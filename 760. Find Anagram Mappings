@@ -1,0 +1,20 @@
+class Solution {
+public:
+    vector<int> anagramMappings(vector<int>& A, vector<int>& B) {
+        vector<int> TempReturn(A.size());
+        
+        map<int,int> map;
+        for(int i = 0; i < B.size(); ++i)
+        {
+            map[B[i]] = i;
+        }
+        
+        for(int i = 0; i < A.size(); ++i)
+        {
+            TempReturn[i] = map.find(A[i])->second;
+        }
+        
+        
+        return TempReturn;
+    }
+};
